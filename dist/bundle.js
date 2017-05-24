@@ -63,11 +63,25 @@
 /******/ 	__webpack_require__.p = "./dist/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports) {
+
+module.exports = function (Vue) {
+
+	var v = new Vue({
+		el: '#app',
+		data: {
+			message: 'Hello Vue!'
+		}
+	});
+};
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8937,59 +8951,10 @@ function getOuterHTML(el) {
 Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const Vue = __webpack_require__(0);
-
-__webpack_require__(4);
-
-__webpack_require__(3)(Vue);
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = function () {
-	return this;
-}();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1, eval)("this");
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports) {
-
-module.exports = function (Vue) {
-
-	var v = new Vue({
-		el: '#app',
-		data: {
-			message: 'Hello Vue!'
-		}
-	});
-};
-
-/***/ }),
-/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -9020,7 +8985,17 @@ if(false) {
 }
 
 /***/ }),
-/* 5 */
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+const Vue = __webpack_require__(1);
+
+__webpack_require__(2);
+
+__webpack_require__(0)(Vue);
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports) {
 
 /*
@@ -9099,7 +9074,7 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports) {
 
 
@@ -9192,10 +9167,35 @@ module.exports = function (css) {
 };
 
 /***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = function () {
+	return this;
+}();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1, eval)("this");
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+/***/ }),
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(5)(undefined);
+exports = module.exports = __webpack_require__(4)(undefined);
 // imports
 
 
@@ -9243,7 +9243,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(6);
+	fixUrls = __webpack_require__(5);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
