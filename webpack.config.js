@@ -1,13 +1,12 @@
 const webpack = require('webpack'); //to access built-in plugins
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
   entry: './app/app.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle-[chunkhash].js',
-    publicPath: "/mobile/dist/"
+    filename: 'bundle.js',
+    publicPath: "./dist/"
   },
   module: {
     rules: [
@@ -28,11 +27,16 @@ const config = {
 
     ]
   },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.common.js'
+    }
+  },
   plugins:[
-        new HtmlWebpackPlugin({               //自动生成Html
-            template:'./app/view/index.html',
-            filename:'../app/index.html',
-            inject:'body'
+        new webpack.DefinePlugin({
+          'process.env': {
+            NODE_ENV: '"production"'
+          }
         })
     ]
 };
