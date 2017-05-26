@@ -6,10 +6,52 @@
     <meta  content="vue学习" name="description">
     <meta content="vue学习" name="keywords">
     <title>vue学习</title>
+    <style type="text/css">
+      [v-cloak] {
+          display: none !important;
+      }
+    </style>
   </head>
   <body>
 
-    <div id="app">{{ message }}</div>
+    <div v-cloak id="top" class="top">
+        <my-top></my-top>
+
+        <div class="top-cont" v-show = "topshow">
+            <ul>
+              <li>
+                <p><img src="./app/img/icon1.png"></p>
+                <p>消息</p>
+              </li>
+              <li>
+                <p><img src="./app/img/icon2.png"></p>
+                <p>航班</p>
+              </li>
+              <li>
+                <p><img src="./app/img/icon3.png"></p>
+                <p>旅行</p>
+              </li>
+              <li>
+                <p><img src="./app/img/icon4.png"></p>
+                <p>钱包</p>
+              </li>
+              <li>
+                <p><img src="./app/img/icon5.png"></p>
+                <p>喜欢</p>
+              </li>
+              <li>
+                <p><img src="./app/img/icon6.png"></p>
+                <p>酒店</p>
+              </li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <div v-cloak class="box" id="box">
+        <my-banner></my-banner>
+    </div>
+    
 
     <script type="text/javascript" src="./dist/bundle.js"></script>
 
