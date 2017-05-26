@@ -67,16 +67,58 @@
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */,
-/* 1 */
-/***/ (function(module, exports) {
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = function (Vue) {
 
-	var v = new Vue({
-		el: '#app',
+	__webpack_require__(11);
+
+	let data = {
+		page: "Vue实战"
+	};
+
+	// 注册组件
+	Vue.component("my-top", {
+		template: '<div class="top-bar"><a class="left"><img src="./app/img/home.png" /></a><p>{{page}}</p><a class="right" v-on:click="topFun"><img src="./app/img/other.png" /></a></div>',
+		data: function () {
+
+			return data;
+		}, methods: {
+			topFun: function () {
+				top.topshow = !top.topshow;
+			}
+		}
+	});
+
+	// 创建top组件实例
+	let top = new Vue({
+		el: '#top',
 		data: {
-			message: 'Hello Vue!'
+
+			topshow: false
+
+		}
+	});
+};
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = function (Vue) {
+
+	__webpack_require__(13);
+
+	let banner = {
+		template: "<div class='banner-box'><img src='./app/img/img1.png' /></div>"
+	};
+
+	let v = new Vue({
+		el: '#box',
+		data: {},
+		components: {
+			'my-banner': banner
 		}
 	});
 };
@@ -8993,6 +9035,8 @@ const Vue = __webpack_require__(2);
 
 __webpack_require__(3);
 
+__webpack_require__(0)(Vue);
+
 __webpack_require__(1)(Vue);
 
 /***/ }),
@@ -9201,7 +9245,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,blockquote,th,td,p,header,footer,html{margin:0;padding:0;font-weight:normal;}\ninput,button,select,textarea{outline:none; vertical-align:middle;font-weight: 300;}\ninput::-moz-focus-inner{ border: 0;padding: 0;}\nli{list-style:none;font-weight:normal;}\nem,i{font-style:normal;}\na,li,p{text-decoration: none;color: #333;-webkit-tap-highlight-color:rgba(0,0,0,0);-moz-tap-highlight-color:rgba(0,0,0,0);-ms-tap-highlight-color:rgba(0,0,0,0);-o-tap-highlight-color:rgba(0,0,0,0);tap-highlight-color:rgba(0,0,0,0)}\nimg{border:none}\ntextarea{resize:none}\nheader,nav,section,article,footer,figure,figcaption{display:block;}\ninput[type=\"text\"],input[type=\"search\"],input[type=\"password\"]{ -ms-appearance: none; -o-appearance: none; -moz-appearance: none; -webkit-appearance: none; appearance: none; list-style: none;border: none;}\nbody{background: #e6e6e6;color:#404040;text-align:center;min-width:320px; min-height: 100%;font-family: \"Source Sans Pro\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;}\nhtml {max-width: 768px; min-width: 320px; width: 100%; min-height: 100%; margin: 0 auto;}\ninput[type=\"button\"], input[type=\"submit\"], input[type=\"reset\"] {-webkit-appearance: none;}\n.clearfix:after{ visibility:hidden; display:block; font-size:0; content:\" \"; clear:both; height:0;}\n.clearfix{ zoom:1;}\n\n/*device-width*/\n@media only screen and (max-width: 359px) { html { font-size:85%; } }\n@media only screen and (min-width: 360px) and (max-width: 399px) { html { font-size: 100%; } }\n@media only screen and (min-width: 400px) and (max-width: 479px) { html { font-size: 112.5%; } }\n@media only screen and (min-width: 480px) and (max-width: 539px) { html { font-size: 125%; } }\n@media only screen and (min-width: 540px) and (max-width: 599px) { html { font-size: 150%; } }\n@media only screen and (min-width: 600px) and (max-width: 639px) { html { font-size: 165%; } }\n@media only screen and (min-width: 640px) and (max-width: 719px) { html { font-size: 177.5%; } }\n@media only screen and (min-width: 720px) and (max-width: 767px) { html { font-size: 200%; } }\n@media only screen and (min-width: 768px) { html { font-size: 200%; } }\n\n.wrap{\n\twidth: 100%;\n\tbackground: #fff;\n}", ""]);
+exports.push([module.i, "body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,blockquote,th,td,p,header,footer,html{margin:0;padding:0;font-weight:normal;}\ninput,button,select,textarea{outline:none; vertical-align:middle;font-weight: 300;}\ninput::-moz-focus-inner{ border: 0;padding: 0;}\nli{list-style:none;font-weight:normal;}\nem,i{font-style:normal;}\na,li,p{text-decoration: none;color: #333;-webkit-tap-highlight-color:rgba(0,0,0,0);-moz-tap-highlight-color:rgba(0,0,0,0);-ms-tap-highlight-color:rgba(0,0,0,0);-o-tap-highlight-color:rgba(0,0,0,0);tap-highlight-color:rgba(0,0,0,0)}\nimg{border:none}\ntextarea{resize:none}\nheader,nav,section,article,footer,figure,figcaption{display:block;}\ninput[type=\"text\"],input[type=\"search\"],input[type=\"password\"]{ -ms-appearance: none; -o-appearance: none; -moz-appearance: none; -webkit-appearance: none; appearance: none; list-style: none;border: none;}\nbody{background: #e6e6e6;color:#404040;text-align:center;min-width:320px; min-height: 100%;font-family: \"Source Sans Pro\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;}\nhtml {max-width: 768px; min-width: 320px; width: 100%; min-height: 100%; margin: 0 auto;}\ninput[type=\"button\"], input[type=\"submit\"], input[type=\"reset\"] {-webkit-appearance: none;}\n.clearfix:after{ visibility:hidden; display:block; font-size:0; content:\" \"; clear:both; height:0;}\n.clearfix{ zoom:1;}\n\n/*device-width*/\n@media only screen and (max-width: 359px) { html { font-size:85%; } }\n@media only screen and (min-width: 360px) and (max-width: 399px) { html { font-size: 100%; } }\n@media only screen and (min-width: 400px) and (max-width: 479px) { html { font-size: 112.5%; } }\n@media only screen and (min-width: 480px) and (max-width: 539px) { html { font-size: 125%; } }\n@media only screen and (min-width: 540px) and (max-width: 599px) { html { font-size: 150%; } }\n@media only screen and (min-width: 600px) and (max-width: 639px) { html { font-size: 165%; } }\n@media only screen and (min-width: 640px) and (max-width: 719px) { html { font-size: 177.5%; } }\n@media only screen and (min-width: 720px) and (max-width: 767px) { html { font-size: 200%; } }\n@media only screen and (min-width: 768px) { html { font-size: 200%; } }\n\n.box{\n\tpadding-top: 3.5rem;\n\theight: 50rem;\n\twidth: 98%;\n\tmargin: 0 auto;\n\t/*box-shadow: 0px 2px 3px #ccc;*/\n}\n.bg-box{\n\twidth: 100%;\n\theight: auto;\n\tbackground: -webkit-linear-gradient(left top, #0dbb92 , #7bc0e9); /* Safari 5.1 - 6.0 */\n  \tbackground: -o-linear-gradient(bottom right, #0dbb92, #7bc0e9); /* Opera 11.1 - 12.0 */\n    background: -moz-linear-gradient(bottom right, #0dbb92, #7bc0e9); /* Firefox 3.6 - 15 */\n    background: linear-gradient(to bottom right, #0dbb92 , #7bc0e9); /* 标准的语法 */\n}", ""]);
 
 // exports
 
@@ -9518,6 +9562,96 @@ function updateLink(linkElement, options, obj) {
 		URL.revokeObjectURL(oldSrc);
 }
 
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(5)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".top{\n\twidth: 100%;\n\theight: auto;\n\tposition: fixed;\n\ttop:0;\n\tmax-width: 768px;\n\tline-height: 3rem;\n\tcolor: #fff;\n}\n.top .top-bar{\n\tbox-shadow: 1px 3px 5px #ccc;\n\theight: 3rem;\n\tbackground: rgba(255,255,255,0.8);\n}\n.top .top-bar a{\n\tdisplay: block;\n\twidth: 2rem;\n\theight: 2rem;\n\tmargin: 0.5rem 1rem;\n}\n.top .top-bar a img{\n\tdisplay: block;\n\twidth: 100%;\n}\n.top .top-bar a.left{\n\tfloat: left;\n}\n.top .top-bar a.left img{\n\twidth: 80%;\n\tmargin-top: 10%;\n}\n.top .top-bar a.right{\n\tfloat: right;\n}\n.top .top-bar p{\n\tposition: absolute;\n\twidth: 5rem;\n\theight: 100%;\n\tmargin: 0 auto;\n\tcolor: #333;\n\tfont-size: 1rem;\n\tleft: 50%;\n\tmargin-left:-2.5rem; \n}\n.top .top-cont{\n\twidth: 100%;\n\theight:auto;\n\tbackground: rgba(255,255,255,0.9);\n\tcolor: #333;\n\tmargin-top: .5rem;\n\tbox-shadow: 1px 3px 5px #ccc;\n}\n.top .top-cont ul{\n\twidth: 100%;\n\tpadding:2rem 0; \n\theight: auto;\n\toverflow:hidden; \n}\n.top .top-cont ul li{\n\tfloat: left;\n\twidth: 50%;\n\theight: 4rem;\n\tmargin: 1rem 0;\n}\n.top .top-cont ul li p{\n\twidth: 100%;\n\tline-height: 2rem;\n\tfont-size: 0.9rem;\n\tfont-weight: normal;\n}\n.top .top-cont ul li p img{\n\tdisplay: block;\n\twidth: 2rem;\n\theight: auto;\n\tmargin: 0 auto;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(10);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(9)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./top.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./top.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(5)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".box .banner-box{\n\twidth:100%;\n\theight: 7rem;\n\toverflow: hidden;\n}\n\n.box .banner-box img{\n\tdisplay: block;\n\twidth: 100%;\n\theight: auto;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(12);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(9)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./index.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./index.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

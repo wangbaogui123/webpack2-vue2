@@ -25,7 +25,18 @@ input[type="button"], input[type="submit"], input[type="reset"] {-webkit-appeara
 @media only screen and (min-width: 720px) and (max-width: 767px) { html { font-size: 200%; } }
 @media only screen and (min-width: 768px) { html { font-size: 200%; } }
 
-.wrap{
+.box{
+	padding-top: 3.5rem;
+	height: 50rem;
+	width: 98%;
+	margin: 0 auto;
+	/*box-shadow: 0px 2px 3px #ccc;*/
+}
+.bg-box{
 	width: 100%;
-	background: #fff;
+	height: auto;
+	background: -webkit-linear-gradient(left top, #0dbb92 , #7bc0e9); /* Safari 5.1 - 6.0 */
+  	background: -o-linear-gradient(bottom right, #0dbb92, #7bc0e9); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(bottom right, #0dbb92, #7bc0e9); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to bottom right, #0dbb92 , #7bc0e9); /* 标准的语法 */
 }

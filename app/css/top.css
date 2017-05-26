@@ -1,0 +1,76 @@
+.top{
+	width: 100%;
+	height: auto;
+	position: fixed;
+	top:0;
+	max-width: 768px;
+	line-height: 3rem;
+	color: #fff;
+}
+.top .top-bar{
+	box-shadow: 1px 3px 5px #ccc;
+	height: 3rem;
+	background: rgba(255,255,255,0.8);
+}
+.top .top-bar a{
+	display: block;
+	width: 2rem;
+	height: 2rem;
+	margin: 0.5rem 1rem;
+}
+.top .top-bar a img{
+	display: block;
+	width: 100%;
+}
+.top .top-bar a.left{
+	float: left;
+}
+.top .top-bar a.left img{
+	width: 80%;
+	margin-top: 10%;
+}
+.top .top-bar a.right{
+	float: right;
+}
+.top .top-bar p{
+	position: absolute;
+	width: 5rem;
+	height: 100%;
+	margin: 0 auto;
+	color: #333;
+	font-size: 1rem;
+	left: 50%;
+	margin-left:-2.5rem; 
+}
+.top .top-cont{
+	width: 100%;
+	height:auto;
+	background: rgba(255,255,255,0.9);
+	color: #333;
+	margin-top: .5rem;
+	box-shadow: 1px 3px 5px #ccc;
+}
+.top .top-cont ul{
+	width: 100%;
+	padding:2rem 0; 
+	height: auto;
+	overflow:hidden; 
+}
+.top .top-cont ul li{
+	float: left;
+	width: 50%;
+	height: 4rem;
+	margin: 1rem 0;
+}
+.top .top-cont ul li p{
+	width: 100%;
+	line-height: 2rem;
+	font-size: 0.9rem;
+	font-weight: normal;
+}
+.top .top-cont ul li p img{
+	display: block;
+	width: 2rem;
+	height: auto;
+	margin: 0 auto;
+}
