@@ -14,44 +14,49 @@
   </head>
   <body>
 
-    <div v-cloak id="top" class="top">
-        <my-top></my-top>
+        <div v-cloak id="top" class="top">
+            <my-top></my-top>
 
-        <div class="top-cont" v-show = "topshow">
-            <ul>
-              <li>
-                <p><img src="./app/img/icon1.png"></p>
-                <p>消息</p>
-              </li>
-              <li>
-                <p><img src="./app/img/icon2.png"></p>
-                <p>航班</p>
-              </li>
-              <li>
-                <p><img src="./app/img/icon3.png"></p>
-                <p>旅行</p>
-              </li>
-              <li>
-                <p><img src="./app/img/icon4.png"></p>
-                <p>钱包</p>
-              </li>
-              <li>
-                <p><img src="./app/img/icon5.png"></p>
-                <p>喜欢</p>
-              </li>
-              <li>
-                <p><img src="./app/img/icon6.png"></p>
-                <p>酒店</p>
-              </li>
-            </ul>
+            <div class="top-cont" v-show = "topshow">
+                <ul>
+                  <li>
+                    <p><img src="./app/img/icon1.png"></p>
+                    <p>消息</p>
+                  </li>
+                  <li>
+                    <p><img src="./app/img/icon2.png"></p>
+                    <p>航班</p>
+                  </li>
+                  <li>
+                    <p><img src="./app/img/icon3.png"></p>
+                    <p>旅行</p>
+                  </li>
+                  <li>
+                    <p><img src="./app/img/icon4.png"></p>
+                    <p>钱包</p>
+                  </li>
+                  <li>
+                    <p><img src="./app/img/icon5.png"></p>
+                    <p>喜欢</p>
+                  </li>
+                  <li>
+                    <p><img src="./app/img/icon6.png"></p>
+                    <p>酒店</p>
+                  </li>
+                </ul>
+            </div>
         </div>
-    </div>
+        
+        <div v-cloak class="box" id="box">
+            <my-banner></my-banner>
+        </div>
 
-    
-    <div v-cloak class="box" id="box">
-        <my-banner></my-banner>
-    </div>
-    
+        <div v-cloak id="app">
+          <router-link to="/">Go to home</router-link>
+          <router-link to="/index">Go to index</router-link>
+          <router-view class="view"></router-view>
+        </div>
+        
 
     <script type="text/javascript" src="./dist/bundle.js"></script>
 
