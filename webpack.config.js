@@ -25,6 +25,11 @@ const config = {
         use: 'url-loader?limit=4192&name=[name].[ext]' 
       },
 
+      {
+        test: /\.html$/, 
+        use: ['html-loader'] 
+      },
+
     ]
   },
   resolve: {

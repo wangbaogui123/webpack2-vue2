@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 
 require('./css/style.css')
 
-require('./component.js')(Vue)
+// require('./component.js')(Vue)
 
 require('./router.js')(Vue,VueRouter)
 

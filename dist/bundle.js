@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "./dist/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -183,7 +183,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(9);
+	fixUrls = __webpack_require__(8);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -464,43 +464,7 @@ function updateLink(linkElement, options, obj) {
 
 module.exports = function (Vue) {
 
-	__webpack_require__(15);
-
-	let data = {
-		page: "Vue实战"
-	};
-
-	// 注册组件
-	Vue.component("my-top", {
-		template: '<div class="top-bar"><a class="left"><img src="./app/img/home.png" /></a><p>{{page}}</p><a class="right" v-on:click="topFun"><img src="./app/img/other.png" /></a></div>',
-		data: function () {
-
-			return data;
-		}, methods: {
-			topFun: function () {
-				top.topshow = !top.topshow;
-			}
-		}
-	});
-
-	// 创建top组件实例
-	let top = new Vue({
-		el: '#top',
-		data: {
-
-			topshow: false
-
-		}
-	});
-};
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = function (Vue) {
-
-	__webpack_require__(14);
+	__webpack_require__(16);
 
 	let banner = {
 		template: "<div class='banner-box'><img src='./app/img/img1.png' /></div>"
@@ -516,37 +480,53 @@ module.exports = function (Vue) {
 };
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports) {
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
 
 module.exports = function (Vue, VueRouter) {
 
+	__webpack_require__(17);
+
 	// 1. 定义（路由）组件。
-	const Home = { template: '<div>home</div>' };
-	const Index = { template: '<div>index</div>' };
-	const Detail = { template: '<div>detail</div>' };
+	var homeHtml = __webpack_require__(14),
+	    flightHtml = __webpack_require__(13),
+	    msgHtml = __webpack_require__(15);
+
+	const Home = { template: homeHtml };
+	const Index = { template: flightHtml };
+	const Detail = { template: msgHtml };
 
 	// 每个路由path应该映射一个组件。 其中"component" 可以是
 	// 通过 Vue.extend() 创建的组件构造器，
 	// 或者，只是一个组件配置对象。
-	const routes = [{ path: '/', component: Home }, { path: '/index', component: Index }, { path: '/detail', component: Detail }];
+	const routes = [{ path: '/', component: Home }, { path: '/flight', component: Index }, { path: '/msg', component: Detail }];
 
 	// 创建路由对象
 	const router = new VueRouter({
-		mode: 'history',
 		routes: routes // （缩写）相当于 routes: routes，es6的新语法
 	});
 
 	var app = new Vue({
 
 		el: "#app",
-		router: router
+		router: router,
+		data: {
+
+			page: "Vue Demo",
+			topshow: false
+
+		},
+		methods: {
+			topFun: function () {
+				app.topshow = !app.topshow;
+			}
+		}
 
 	});
 };
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2847,7 +2827,7 @@ if (inBrowser && window.Vue) {
 /* harmony default export */ __webpack_exports__["a"] = (VueRouter);
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11717,16 +11697,16 @@ function getOuterHTML(el) {
 Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(12);
+var content = __webpack_require__(11);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -11751,30 +11731,30 @@ if(false) {
 }
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(4);
 
 
 
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
-__webpack_require__(7);
+__webpack_require__(6);
+
+// require('./component.js')(Vue)
+
+__webpack_require__(3)(__WEBPACK_IMPORTED_MODULE_0_vue___default.a, __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
 
 __webpack_require__(2)(__WEBPACK_IMPORTED_MODULE_0_vue___default.a);
 
-__webpack_require__(4)(__WEBPACK_IMPORTED_MODULE_0_vue___default.a, __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]);
-
-__webpack_require__(3)(__WEBPACK_IMPORTED_MODULE_0_vue___default.a);
-
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports) {
 
 
@@ -11867,7 +11847,7 @@ module.exports = function (css) {
 };
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports) {
 
 var g;
@@ -11892,7 +11872,7 @@ try {
 module.exports = g;
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(undefined);
@@ -11906,7 +11886,7 @@ exports.push([module.i, ".box .banner-box{\n\twidth:100%;\n\theight: 7rem;\n\tov
 
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(undefined);
@@ -11920,7 +11900,7 @@ exports.push([module.i, "body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,f
 
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(0)(undefined);
@@ -11928,19 +11908,37 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, ".top{\n\twidth: 100%;\n\theight: auto;\n\tposition: fixed;\n\ttop:0;\n\tmax-width: 768px;\n\tline-height: 3rem;\n\tcolor: #fff;\n}\n.top .top-bar{\n\tbox-shadow: 1px 3px 5px #ccc;\n\theight: 3rem;\n\tbackground: rgba(255,255,255,0.8);\n}\n.top .top-bar a{\n\tdisplay: block;\n\twidth: 2rem;\n\theight: 2rem;\n\tmargin: 0.5rem 1rem;\n}\n.top .top-bar a img{\n\tdisplay: block;\n\twidth: 100%;\n}\n.top .top-bar a.left{\n\tfloat: left;\n}\n.top .top-bar a.left img{\n\twidth: 80%;\n\tmargin-top: 10%;\n}\n.top .top-bar a.right{\n\tfloat: right;\n}\n.top .top-bar p{\n\tposition: absolute;\n\twidth: 5rem;\n\theight: 100%;\n\tmargin: 0 auto;\n\tcolor: #333;\n\tfont-size: 1rem;\n\tleft: 50%;\n\tmargin-left:-2.5rem; \n}\n.top .top-cont{\n\twidth: 100%;\n\theight:auto;\n\tbackground: rgba(255,255,255,0.9);\n\tcolor: #333;\n\tmargin-top: .5rem;\n\tbox-shadow: 1px 3px 5px #ccc;\n}\n.top .top-cont ul{\n\twidth: 100%;\n\tpadding:2rem 0; \n\theight: auto;\n\toverflow:hidden; \n}\n.top .top-cont ul li{\n\tfloat: left;\n\twidth: 50%;\n\theight: 4rem;\n\tmargin: 1rem 0;\n}\n.top .top-cont ul li p{\n\twidth: 100%;\n\tline-height: 2rem;\n\tfont-size: 0.9rem;\n\tfont-weight: normal;\n}\n.top .top-cont ul li p img{\n\tdisplay: block;\n\twidth: 2rem;\n\theight: auto;\n\tmargin: 0 auto;\n}\n", ""]);
+exports.push([module.i, ".top{\n\twidth: 100%;\n\theight: auto;\n\tposition: fixed;\n\ttop:0;\n\tmax-width: 768px;\n\tline-height: 3rem;\n\tcolor: #fff;\n}\n.top .top-bar{\n\tbox-shadow: 1px 3px 5px #ccc;\n\theight: 3rem;\n\tbackground: rgba(255,255,255,0.8);\n}\n.top .top-bar a{\n\tdisplay: block;\n\twidth: 2rem;\n\theight: 2rem;\n\tmargin: 0.5rem 1rem;\n}\n.top .top-bar a img{\n\tdisplay: block;\n\twidth: 100%;\n}\n.top .top-bar a.left{\n\tfloat: left;\n}\n.top .top-bar a.left img{\n\twidth: 80%;\n\tmargin-top: 10%;\n}\n.top .top-bar a.right{\n\tfloat: right;\n}\n.top .top-bar p{\n\tposition: absolute;\n\twidth: 5rem;\n\theight: 100%;\n\tmargin: 0 auto;\n\tcolor: #333;\n\tfont-size: 1rem;\n\tleft: 50%;\n\tmargin-left:-2.5rem; \n}\n.top .top-cont{\n\twidth: 100%;\n\theight:auto;\n\tbackground: rgba(255,255,255,0.9);\n\tcolor: #333;\n\tmargin-top: .5rem;\n\tbox-shadow: 1px 3px 5px #ccc;\n}\n.top .top-cont ul{\n\twidth: 100%;\n\tpadding:2rem 0; \n\theight: auto;\n\toverflow:hidden; \n}\n.top .top-cont ul li{\n\tfloat: left;\n\twidth: 25%;\n\theight: 4rem;\n\tmargin: 1rem 0;\n}\n.top .top-cont ul li p{\n\twidth: 100%;\n\tline-height: 2rem;\n\tfont-size: 0.9rem;\n\tfont-weight: normal;\n}\n.top .top-cont ul li p img{\n\tdisplay: block;\n\twidth: 2rem;\n\theight: auto;\n\tmargin: 0 auto;\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
+module.exports = "<div>flightHtml</div>";
+
+/***/ }),
 /* 14 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"box\" v-cloak>\n\n</div>";
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+module.exports = "<div>msg</div>";
+
+/***/ }),
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(11);
+var content = __webpack_require__(10);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -11965,13 +11963,13 @@ if(false) {
 }
 
 /***/ }),
-/* 15 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(13);
+var content = __webpack_require__(12);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;

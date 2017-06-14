@@ -13,49 +13,55 @@
     </style>
   </head>
   <body>
+        <div v-cloak id="app">
 
-        <div v-cloak id="top" class="top">
-            <my-top></my-top>
+          <div v-cloak class="top">
+              <div class="top-bar"><router-link to="/" class="left"><img src="./app/img/home.png" /></router-link><p>{{page}}</p><a class="right" v-on:click="topFun"><img src="./app/img/other.png" /></a></div>
 
-            <div class="top-cont" v-show = "topshow">
-                <ul>
-                  <li>
-                    <p><img src="./app/img/icon1.png"></p>
-                    <p>消息</p>
-                  </li>
-                  <li>
-                    <p><img src="./app/img/icon2.png"></p>
-                    <p>航班</p>
-                  </li>
-                  <li>
-                    <p><img src="./app/img/icon3.png"></p>
-                    <p>旅行</p>
-                  </li>
-                  <li>
-                    <p><img src="./app/img/icon4.png"></p>
-                    <p>钱包</p>
-                  </li>
-                  <li>
-                    <p><img src="./app/img/icon5.png"></p>
-                    <p>喜欢</p>
-                  </li>
-                  <li>
-                    <p><img src="./app/img/icon6.png"></p>
-                    <p>酒店</p>
-                  </li>
-                </ul>
-            </div>
+              <div class="top-cont" v-show = "topshow">
+                  <ul>
+                    <li>
+
+                      <router-link to="msg">
+                        <p><img src="./app/img/icon1.png"></p>
+                        <p>消息</p>
+                      </router-link>
+
+                    </li>
+                    <li>
+
+                      <router-link to="/flight">
+                        <p><img src="./app/img/icon2.png"></p>
+                        <p>航班</p> 
+                      </router-link>
+                      
+                    </li>
+                    <li>
+                      <p><img src="./app/img/icon3.png"></p>
+                      <p>旅行</p>
+                    </li>
+                    <li>
+                      <p><img src="./app/img/icon4.png"></p>
+                      <p>钱包</p>
+                    </li>
+                    <li>
+                      <p><img src="./app/img/icon5.png"></p>
+                      <p>喜欢</p>
+                    </li>
+                    <li>
+                      <p><img src="./app/img/icon6.png"></p>
+                      <p>酒店</p>
+                    </li>
+                  </ul>
+              </div>
+          </div>
+
+          <router-view class="views"></router-view>
+
         </div>
         
-        <div v-cloak class="box" id="box">
-            <my-banner></my-banner>
-        </div>
 
-        <div v-cloak id="app">
-          <router-link to="/">Go to home</router-link>
-          <router-link to="/index">Go to index</router-link>
-          <router-view class="view"></router-view>
-        </div>
+        
         
 
     <script type="text/javascript" src="./dist/bundle.js"></script>

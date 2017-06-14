@@ -3,7 +3,7 @@ module.exports = function(Vue){
 	require('./css/top.css')
 
 	let data = {
-		page:"Vue实战"
+		page:"Vue Demo"
 	}
 
 	// 注册组件
